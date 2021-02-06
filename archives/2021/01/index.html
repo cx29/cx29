@@ -2,16 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>烟花</title>
     
 <link rel="stylesheet" href="/css/index.css">
 
 <meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
-    <div class="abc"></div>
+    <div class="demo">
+    </div>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script> -->
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <!-- <script src="../source/js/fireworks.js"></script> -->
+    
+<script src="/js/fireworks.js"></script>
+
+    <script>
+        $('.demo').fireworks({
+            sound: true,
+            opacity: 0.6,
+            width: '100%',
+            height: '100%'
+        });
+    </script>
+
 </body>
-
-<script src="/js/index.js"></script>
-
 </html>
