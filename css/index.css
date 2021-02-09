@@ -20,7 +20,7 @@ body {
   width: 31.25rem;
   height: 21.875rem;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.925);
+  background-color: #ffffff;
   border-radius: 1.875rem;
   display: flex;
   flex-direction: column;
@@ -30,14 +30,91 @@ body {
 }
 .bd .tips .topTips {
   width: 40%;
-  height: 40%;
-  background-color: pink;
+  height: 30%;
   display: flex;
   align-items: center;
   font-size: 2.5rem;
   justify-content: center;
   font-weight: 900;
   font-family: 'ziti';
+  transition: all 0.5s;
+}
+.bd .tips .boxInput {
+  width: 50%;
+  height: 10%;
+  background-color: #d4c7e3;
+  margin-bottom: 10%;
+  border: 0;
+}
+.bd .tips .boxInput input {
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  text-indent: 10px;
+  transition: all 0.5s;
+  border: 1px solid #e7e7e7;
+  font-size: 20px;
+  font-family: 'ziti';
+}
+.bd .tips .boxButton {
+  width: 50%;
+  height: 10%;
+}
+.bd .tips .boxButton button {
+  transform-style: preserve-3d;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  color: #fff;
+  background: linear-gradient(45deg, #e53935, #e35d5b);
+  position: relative;
+  height: 87%;
+  font-family: 'ziti';
+  font-size: 20px;
+  font-weight: 900;
+  transition: all 0.5s;
+}
+.bd .tips .boxButton button .role {
+  width: 100%;
+}
+.bd .tips .boxButton button .role::before,
+.bd .tips .boxButton button .role::after {
+  content: "";
+  width: 100%;
+  height: 1.625rem;
+  background: linear-gradient(45deg, #e2231e, #df4745);
+  position: absolute;
+  left: 0;
+  transform-origin: 0 0;
+  transform: rotateZ(0deg) rotateX(-90deg);
+}
+.bd .tips .boxButton button .role::before {
+  top: 0;
+}
+.bd .tips .boxButton button .cloum {
+  width: 100%;
+}
+.bd .tips .boxButton button .cloum::before,
+.bd .tips .boxButton button .cloum::after {
+  content: "";
+  width: 1.8125rem;
+  height: 100%;
+  background-color: #e53935;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-origin: 100% 100%;
+  transform: rotateX(90deg) rotateY(90deg);
+}
+.bd .tips .boxButton button .cloum::after {
+  left: 0;
+  transform-origin: 0 0;
+  transform: rotateX(-90deg) rotateY(-90deg);
+}
+.bd .tips .boxButton button .cloum::before,
+.bd .tips .boxButton button .cloum::after {
+  border-bottom: 0;
 }
 .bd .tips::before {
   content: "";
@@ -53,6 +130,20 @@ body {
 }
 .bd .tips:hover {
   transform: rotateX(20deg) rotateY(-30deg);
+}
+.bd .tips:hover .topTips {
+  text-shadow: 5px 5px 4px #aa9fb6;
+}
+.bd .tips:hover .boxInput input {
+  transform: translateZ(26px);
+  border: 1px solid #e77371;
+}
+.bd .tips:hover .boxButton button {
+  transform: translateZ(26px);
+}
+.bd .tips:hover .boxButton button:hover {
+  transform: translateZ(4px);
+  cursor: pointer;
 }
 .demo {
   margin: 0 auto;
@@ -89,5 +180,5 @@ h1 {
 }
 @font-face {
   font-family: 'ziti';
-  src: url(../HanaleiFill-Regular.ttf);
+  src: url(../IndieFlower.ttf);
 }
