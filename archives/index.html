@@ -1,61 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>某不知名的小站</title>
-    
-<link rel="stylesheet" href="/css/index.css">
+	<meta charset="utf-8">
+	<title>flower</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css.css"/> -->
+	<!-- <link rel="stylesheet" href="./css.css"> -->
+	
+<link rel="stylesheet" href="/css/css.css">
 
-    <!-- <link rel="stylesheet" href="../source/css/index.css"> -->
 <meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
-    <div class="bd">
-        <div class="tips">
-            <div class="topTips">
-                <p>Welcome !</p>
-            </div>
-            <div class="boxInput">
-                <input type="text" name="" id="name" placeholder="Name" required>
-            </div>
-            <div class="boxButton">
-                <button id="press" onclick="click1()">Press me
-                    <div class="role"></div>
-                    <div class="cloum"></div>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- 提示框 -->
-    <div class="alterTip" id="alterTip">
-        <p><span id="dayTime">晚上好</span>,&nbsp;<span id="dayName">按不出</span></p>
-    </div>
-    <!-- 烟花 -->
-    <div class="demo"></div>
-
+	<div id="flower-container">
+		<div id="bg-star"></div>
+		<div id="flower-outer">
+			<span class="flower-outer outer1"></span>
+			<span class="flower-outer outer2"></span>
+			<span class="flower-outer outer3"></span>
+			<span class="flower-outer outer4"></span>
+			<span class="flower-outer outer5"></span>
+			<span class="flower-outer outer6"></span>
+			<span class="flower-outer outer7"></span>
+			<span class="flower-outer outer8"></span>
+			<div id="flower-center">
+				<span class="flower-center center1"></span>
+				<span class="flower-center center2"></span>
+				<span class="flower-center center3"></span>
+				<span class="flower-center center4"></span>
+				<span class="flower-center center5"></span>
+				<span class="flower-center center6"></span>
+				<span class="flower-center center7"></span>
+				<span class="flower-center center8"></span>
+				<div id="flower-inner">
+					<span class="flower-inner inner1"></span>
+					<span class="flower-inner inner2"></span>
+					<span class="flower-inner inner3"></span>
+					<span class="flower-inner inner4"></span>
+					<span class="flower-inner inner5"></span>
+					<span class="flower-inner inner6"></span>
+					<span class="flower-inner inner7"></span>
+					<span class="flower-inner inner8"></span>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
-<!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script> -->
-
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
-
-<!-- <script src="../source/js/fireworks.js"></script> -->
-
-<script src="/js/fireworks.js"></script>
-
-<!-- <script src="../source/js/demon.js"></script> -->
-
-<script src="/js/demon.js"></script>
-
-<script>
-    var num=0;
-    if(num!=0){
-        $('.demo').fireworks({
-        sound: true,
-        opacity: 0.6,
-        width: '100%',
-        height: '100%'
-    });
-    }
-</script>
 </html>
