@@ -3,6 +3,13 @@ html,
     margin: 0;
     padding: 0
 }
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
 body{overflow: hidden;}
 .bd{
     width: 100%;
@@ -81,22 +88,50 @@ body{overflow: hidden;}
                 animation: xuanzhuan 1s linear infinite alternate;
             }
         }
-        pre{
-            width: 80%;
-            height: 200px;
-            background-color: pink;
+        .wenan1,.wenan2{
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url(../img/11.jpg) no-repeat;
+            background-size: 100%;
+            #output,#output1{
+                font-size: 30px;
+                font-weight: 900;
+                text-align: center;
+                color: #fff;
+                ul{
+                    font-size: 15px;
+                    font-weight: 500;
+                    text-align: left;
+                    ol{
+                        margin-top: 5%;
+                        .yu{
+                            font-size: 40px;
+                            animation: xuanzhuan1 1.5s linear infinite alternate;
+                        }
+                        .shu{
+                            font-size: 40px;
+                            animation: xuanzhuan2 1.5s linear infinite alternate;
+                        }
+                    }
+                }
+            }
         }
         button{
             position: absolute;
-            width: 120px;
+            width: 135px;
             height: 30px;
             border-radius: 20px;
             z-index: 999;
             left: 38%;
-            bottom: 4%;
+            bottom: 2%;
             font-family: 'ziti';
             font-weight: 700;
             outline: none;
+            cursor: pointer;
         }
     }
     .tips{
@@ -208,7 +243,11 @@ body{overflow: hidden;}
         background-color: #e0d6ec;
         opacity: 0.8;
     }
-    .tip::before{opacity: 1;}
+    .tip::before{
+        background: url(../img/22.jpg) no-repeat;
+        background-size: 100%;
+        opacity: 1;
+    }
     // .tips:hover{
     //     transform: rotateX(20deg) rotateY(-30deg);
     //     .topTips{
@@ -333,6 +372,22 @@ h1 {
 @keyframes textOut{
     to{
         top: -400px;
+    }
+}
+@keyframes xuanzhuan1{
+    from{
+        transform: rotateY(-360deg);
+    }
+    to{
+        transform: rotateY(0);
+    }
+}
+@keyframes xuanzhuan2{
+    from{
+        transform: rotateZ(-20deg);
+    }
+    to{
+        transform: rotateZ(20deg);
     }
 }
 @font-face{
@@ -480,8 +535,12 @@ to {
         .textsbox{
             width: 300px;
             height: 340px;
+            .wenan1,.wenan2{
+                #output{font-size: 20px;}
+                #output1{font-size: 20px;}
+            }
             button{
-                left: 30%;
+                left: 27%;
             }
         }
     }
@@ -489,4 +548,16 @@ to {
         left: 28%;
     }
     #div_dbcake_cake{left: 32%;}
+}
+.activeHua{
+    font-size: 30px;
+    animation: hua 1.5s linear infinite alternate;
+}
+@keyframes hua{
+    from{
+        transform: rotateZ(0);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
 }

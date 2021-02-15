@@ -1,3 +1,4 @@
+
 var Name=document.getElementById("name");
 var alterTip=document.getElementById("alterTip");
 var dayTime=document.getElementById("dayTime");
@@ -14,7 +15,7 @@ function click1(){
         case "熊姝贤":{
             // console.log("正确");
             timeClock();
-            $("#tips").css({"transform":"rotateX(0deg) rotateY(-180deg)","transition":"all 2s"}).addClass("tip");
+            $("#tips").css({"transform":"rotateX(0deg) rotateY(-180deg)","transition":"all 2s"}).addClass("tip").css("height","300px");
             cakeShow();
         };break;
         default:{
@@ -53,22 +54,54 @@ function cakeShow(){
         $("#div_dbcake_cake").fadeIn("slow");
         show_dbcake();
         $(".textsbox").fadeIn("slow");
+        // $("#music").css("src","../source/music/杏子 (きょうこ) - Happy Birthday [mqms2].mp3");
+        addDynamicNameAttr_audio("../source/music/杏子 (きょうこ) - Happy Birthday [mqms2].mp3");
         clearInterval(time);
     },6000);
 }
 //文案显示
-function textShow(){
-    let index=0;
-    let word=document.getElementById("textBox").innerHTML;
-    console.log(word);
-    let textClock=setInterval(() => {
-        document.getElementById("textBoxs").innerHTML=word.substring(0,index++)+" _";
-    }, 1000);
-    if(index==word.length){
-        clearInterval(textClock);
-        document.getElementById("textBoxs").innerHTML=word;
-    }
-}
+// function textShow(word,pre){
+//     let textIndex=0;
+//     let exchange=0;
+//     console.log(word.length);
+//     let textClock=setInterval(() => {
+//         textIndex++;
+//         exchange=textIndex;
+//         console.log(exchange);
+//         pre.innerHTML=word.substring(0,textIndex)+" _";
+//         if(word[textIndex]=='把'&&textIndex==159){
+//             clearInterval(textClock);
+//             jixu(word,pre,exchange);
+//             console.log("进来了");
+//         }
+//         // if(textIndex==word.length+1){
+//         //     clearInterval(textClock);
+//         //     textIndex=0;
+//         //     console.log("也进来了");
+//         //     pre.innerHTML=word;
+//         // }
+//     }, 10);
+// }
+//断点之后继续显示
+// function jixu(word,pre,exchange){
+//     if(word[exchange]=='把'&&exchange==159){
+//         $("#textBoxs").css("top","-9.25rem");
+//         //无效,获取不到内联样式
+//         //console.log($("#textBoxs").css("top"));
+//         let word2=word.slice(0,exchange);
+//         console.log(word.slice(0,exchange+1));
+//         if(document.getElementById("textBoxs").style.top=="-9.25rem"){
+//             let a=exchange
+//             let textClock2=setInterval(() => {
+//                 pre.innerHTML=word2+word.substring(a,exchange++)+" _";
+//                 if(exchange==word.length+1){
+//                     clearInterval(textClock2);
+//                     pre.innerHTML=word;
+//                 }
+//             }, 400);
+//         }
+//     }
+// }
 //切换时间显示
 function qiehuan(){
     shijiancha(sum);
@@ -132,8 +165,77 @@ function show_dbcake(){
 }
 //文案框下一步的按钮
 function toContinue(){
+    $(".textsbox").css("display","flex");
     if($(".initText").css("display")=="flex"){
+        // let word=document.getElementById("textBox").innerHTML;
+        // let pre=document.getElementById("textBoxs");
+        // textShow(word,pre);
+        let source = document.getElementById('source')
+        let output = document.getElementById('output')
+        let typing = new Typing({
+          source,
+          output
+        });
         $(".initText").fadeOut();
+        clearInterval(textTime);
+        // $("#music").css("src","../source/music/面包 - 春日,樱花还有你 (抖音原版).mp3");
+        addDynamicNameAttr_audio("../source/music/面包 - 春日,樱花还有你 (抖音原版).mp3");
+        $("#div_dbcake_cake").slideUp(2000);
+        $(".wenan1").fadeIn().css("display","flex");
+        if($(".wenan1").css("display")=="flex"){
+            $("#btn1").css({
+                "width": "100%",
+                "left": "0",
+                "height": "2.5rem",
+                "bottom": "0",
+                "border-radius": "1.875rem",
+                "border-top-left-radius": "0",
+                "border-top-right-radius": "0",
+                "background-color": "#cdbca7d3"
+            });
+            $("#hua").addClass("activeHua");
+            $("#hua1").addClass("activeHua");
+        }
+        typing.start();
+    }else if($(".wenan1").css("display")=="flex"){
+        // let word=document.getElementById("textBox2").innerHTML;
+        // let pre=document.getElementById("textBoxs2");
+        let source = document.getElementById('source1');
+        let output = document.getElementById('output1');
+        let typing = new Typing({
+          source,
+          output
+        })
+        $(".wenan1").fadeOut();
+        $(".wenan2").fadeIn().css("display","flex");
+        typing.start();
+        document.getElementById("btn1").innerHTML="去看烟花吧 !";
+    }else if($(".wenan2").css("display")=="flex"){
+        $(".bd").fadeOut();
+        let widthNum=parseFloat($("#body").css("width"));
+        console.log(widthNum);
+        if(widthNum<740){
+            $("#body").css({"background":"url(../source/img/33.jpg) no-repeat","background-size":"100%"});
+        }else{
+            $("#body").css({"background":"url(../source/img/44.jpg) no-repeat","background-size":"100%"});
+        }
+        $('.demo').fireworks({
+            sound: true,
+            opacity: 0.6,
+            width: '100%',
+            height: '100%'
+        });
+        // $("#music").css("src","../source/music/打上花火-DAOKO (ダヲコ)米津玄師 (よねづ けんし)-ringtone.mp3");
+        addDynamicNameAttr_audio("../source/music/打上花火-DAOKO (ダヲコ)米津玄師 (よねづ けんし)-ringtone.mp3");
     }
     // console.log($(".initText").css("display")=="flex");
+}
+//修改音乐
+function addDynamicNameAttr_audio(nameAttrValue) {
+    console.log(nameAttrValue);
+    $(function () {
+        $('#music').attr('src',nameAttrValue);
+        var fry_audio=$('#fry_audio').get('0');
+        fry_audio.load();
+    });  
 }
