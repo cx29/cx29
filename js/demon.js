@@ -55,7 +55,7 @@ function cakeShow(){
         show_dbcake();
         $(".textsbox").fadeIn("slow");
         // $("#music").css("src","../source/music/杏子 (きょうこ) - Happy Birthday [mqms2].mp3");
-        addDynamicNameAttr_audio("../source/music/杏子 (きょうこ) - Happy Birthday [mqms2].mp3");
+        // addDynamicNameAttr_audio("../source/music/杏子 (きょうこ) - Happy Birthday [mqms2].mp3");
         clearInterval(time);
     },6000);
 }
@@ -179,7 +179,7 @@ function toContinue(){
         $(".initText").fadeOut();
         clearInterval(textTime);
         // $("#music").css("src","../source/music/面包 - 春日,樱花还有你 (抖音原版).mp3");
-        addDynamicNameAttr_audio("../source/music/面包 - 春日,樱花还有你 (抖音原版).mp3");
+        // addDynamicNameAttr_audio("../source/music/面包 - 春日,樱花还有你 (抖音原版).mp3");
         $("#div_dbcake_cake").slideUp(2000);
         $(".wenan1").fadeIn().css("display","flex");
         if($(".wenan1").css("display")=="flex"){
@@ -212,13 +212,7 @@ function toContinue(){
         document.getElementById("btn1").innerHTML="去看烟花吧 !";
     }else if($(".wenan2").css("display")=="flex"){
         $(".bd").fadeOut();
-        let widthNum=parseFloat($("#body").css("width"));
-        console.log(widthNum);
-        if(widthNum<740){
-            $("#body").css({"background":"url(../source/img/33.jpg) no-repeat","background-size":"100%"});
-        }else{
-            $("#body").css({"background":"url(../source/img/44.jpg) no-repeat","background-size":"100%"});
-        }
+        $(".bj").fadeIn();
         $('.demo').fireworks({
             sound: true,
             opacity: 0.6,
@@ -226,7 +220,7 @@ function toContinue(){
             height: '100%'
         });
         // $("#music").css("src","../source/music/打上花火-DAOKO (ダヲコ)米津玄師 (よねづ けんし)-ringtone.mp3");
-        addDynamicNameAttr_audio("../source/music/打上花火-DAOKO (ダヲコ)米津玄師 (よねづ けんし)-ringtone.mp3");
+        // addDynamicNameAttr_audio("../source/music/打上花火-DAOKO (ダヲコ)米津玄師 (よねづ けんし)-ringtone.mp3");
     }
     // console.log($(".initText").css("display")=="flex");
 }
