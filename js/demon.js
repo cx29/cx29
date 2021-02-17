@@ -55,7 +55,7 @@ function cakeShow(){
         show_dbcake();
         $(".textsbox").fadeIn("slow");
         // $("#music").css("src","../source/music/杏子 (きょうこ) - Happy Birthday [mqms2].mp3");
-        // addDynamicNameAttr_audio("../source/music/杏子 (きょうこ) - Happy Birthday [mqms2].mp3");
+        addDynamicNameAttr_audio("https://music.163.com/outchain/player?type=2&id=4969823&auto=1&height=66");
         clearInterval(time);
     },6000);
 }
@@ -179,23 +179,23 @@ function toContinue(){
         $(".initText").fadeOut();
         clearInterval(textTime);
         // $("#music").css("src","../source/music/面包 - 春日,樱花还有你 (抖音原版).mp3");
-        // addDynamicNameAttr_audio("../source/music/面包 - 春日,樱花还有你 (抖音原版).mp3");
+        addDynamicNameAttr_audio("https://music.163.com/outchain/player?type=2&id=1384026889&auto=1&height=66");
         $("#div_dbcake_cake").slideUp(2000);
         $(".wenan1").fadeIn().css("display","flex");
-        if($(".wenan1").css("display")=="flex"){
-            $("#btn1").css({
-                "width": "100%",
-                "left": "0",
-                "height": "2.5rem",
-                "bottom": "0",
-                "border-radius": "1.875rem",
-                "border-top-left-radius": "0",
-                "border-top-right-radius": "0",
-                "background-color": "#cdbca7d3"
-            });
-            $("#hua").addClass("activeHua");
-            $("#hua1").addClass("activeHua");
-        }
+        // if($(".wenan1").css("display")=="flex"){
+        //     $("#btn1").css({
+        //         "width": "100%",
+        //         "left": "0",
+        //         "height": "2.5rem",
+        //         "bottom": "0",
+        //         "border-radius": "1.875rem",
+        //         "border-top-left-radius": "0",
+        //         "border-top-right-radius": "0",
+        //         "background-color": "#cdbca7d3"
+        //     });
+        //     $("#hua").css("display","block").addClass("activeHua");
+        //     $("#hua1").css("display","block").addClass("activeHua");
+        // }
         typing.start();
     }else if($(".wenan1").css("display")=="flex"){
         // let word=document.getElementById("textBox2").innerHTML;
@@ -206,8 +206,10 @@ function toContinue(){
           source,
           output
         })
-        $(".wenan1").fadeOut();
-        $(".wenan2").fadeIn().css("display","flex");
+        $(".wenan1").hide();
+        $(".wenan2").show().css("display","flex");
+        if($(".wenan2").css("display")=="flex")
+            $("#btn1").css("bottom","0");
         typing.start();
         document.getElementById("btn1").innerHTML="去看烟花吧 !";
     }else if($(".wenan2").css("display")=="flex"){
@@ -220,7 +222,7 @@ function toContinue(){
             height: '100%'
         });
         // $("#music").css("src","../source/music/打上花火-DAOKO (ダヲコ)米津玄師 (よねづ けんし)-ringtone.mp3");
-        // addDynamicNameAttr_audio("../source/music/打上花火-DAOKO (ダヲコ)米津玄師 (よねづ けんし)-ringtone.mp3");
+        addDynamicNameAttr_audio("https://music.163.com/outchain/player?type=2&id=496869422&auto=1&height=66");
     }
     // console.log($(".initText").css("display")=="flex");
 }
@@ -228,8 +230,8 @@ function toContinue(){
 function addDynamicNameAttr_audio(nameAttrValue) {
     console.log(nameAttrValue);
     $(function () {
-        $('#music').attr('src',nameAttrValue);
-        var fry_audio=$('#fry_audio').get('0');
+        $('#aaa').attr('src',nameAttrValue);
+        var fry_audio=$('#aaa').get('0');
         fry_audio.load();
     });  
 }
