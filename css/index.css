@@ -106,7 +106,9 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'ziti';
-  background-color: #ffb5d8be;
+  background: url(https://gitee.com/two_nine/blogpic/raw/master/222.jpg) no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
 }
 .bd .textsbox .wenan1 #output,
 .bd .textsbox .wenan2 #output,
