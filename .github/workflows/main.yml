@@ -16,8 +16,8 @@ jobs:
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: dist/snake.svg
-          theme: black
+          outputs: |
+            dist/snake-dark.svg?palette=github-dark&color_snake=#00ffcc&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
 
       - name: Push to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
